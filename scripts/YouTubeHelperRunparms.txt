@@ -1,0 +1,25 @@
+#
+# Function options: GetListCSV - Retrieves all videos and writes to CSV
+#                   MostRecent - Retrieves videos added since last retrieval
+Function=MostRecent
+#
+# General parms
+#
+ApiKey=/Users/Shared/YouTubeDataApiKey.txt
+OutputDir=/data/dev/HayseedSoftware/Eclipse/YouTubeHelper/working
+Output=/data/dev/HayseedSoftware/Eclipse/YouTubeHelper/working/VideoList.csv
+TimeStamp=/data/dev/HayseedSoftware/Eclipse/YouTubeHelper/working/TimeStamp.txt
+Delimiter=,
+CSVColumnNames=ID,Title,Date Published,Action,Muscle Group,Muscle Movement,Difficulty,Equipment
+#
+# YouTube request parms
+#
+YouTube.Channels.List.part=contentDetails
+#
+YouTube.Playlist.Items.List.part=id,contentDetails,snippet
+YouTube.Playlist.Items.List.setMaxResults=50
+YouTube.Playlist.Items.List.setFields=items(contentDetails/videoId,snippet/title,snippet/publishedAt),nextPageToken,pageInfo
+#
+Search.Delete.Last.Item=yes
+YouTube.Search.List.part=id, snippet
+YouTube.Search.List.setFields=items(id, snippet/title, snippet/publishedAt)
