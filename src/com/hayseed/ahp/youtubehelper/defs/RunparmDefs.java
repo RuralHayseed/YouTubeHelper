@@ -1,6 +1,7 @@
 package com.hayseed.ahp.youtubehelper.defs;
 
 /**
+ * Definitions
  * 
  * @author RuralHayseed
  *
